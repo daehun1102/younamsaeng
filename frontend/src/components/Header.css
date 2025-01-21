@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e90ff;
+  padding: 1rem 2rem;
+}
+
+.header-left {
+  flex: 1; /* 왼쪽 영역 */
+}
+
+.header-center {
+  flex: 2; /* 중앙 영역 */
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 1; /* 오른쪽 영역 */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-left a,
+.header-center ul li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-center ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
