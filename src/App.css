@@ -1,0 +1,19 @@
+/* 전체 레이아웃 설정 */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 화면 높이를 기준으로 설정 */
+}
+
+main {
+  flex: 1; /* main이 남는 공간을 차지하도록 설정 */
+}
+
+/* Footer를 하단에 고정 */
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
