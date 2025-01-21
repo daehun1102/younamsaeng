@@ -16,7 +16,7 @@ from pydantic import BaseModel, EmailStr, Field, ValidationError
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 import secrets
-from database import SessionLocal, User
+from project.database import SessionLocal, User
 
 app = FastAPI()
 
@@ -53,7 +53,7 @@ def get_db():
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
-#Create
+#Create user
 def create_user(db: Session, user_data: UserCreate):
     hashed_password = hash_password(user_data.password)
     db_user = User(username=user_data.username, email=user_data.email, password=hashed_password)
@@ -62,7 +62,7 @@ def create_user(db: Session, user_data: UserCreate):
     db.refresh(db_user)
     return db_user
 
-#Read
+#Read user
 def get_user_by_email(db: Session, email: str):
     return db.query(User).filter(User.email == email).first()
 
